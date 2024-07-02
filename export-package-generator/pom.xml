@@ -18,7 +18,7 @@
     <properties>
         <maven-jar-plugin.Automatic-Module-Name>${project.groupId}.export_package_generator</maven-jar-plugin.Automatic-Module-Name>
 
-        <junit-jupiter-engine.version>5.10.2</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.10.3</junit-jupiter-engine.version>
 
         <maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
     </properties>
