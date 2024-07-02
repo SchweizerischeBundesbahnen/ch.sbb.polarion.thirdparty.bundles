@@ -185,19 +185,16 @@
         </profile>
     </profiles>
 
+    <dependencies>
+        <dependency>
+            <groupId>online.grigoriev.tools</groupId>
+            <artifactId>export-package-generator</artifactId>
+            <version>1.0.0</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-        </plugins>
-
         <pluginManagement>
             <plugins>
                 <plugin>
