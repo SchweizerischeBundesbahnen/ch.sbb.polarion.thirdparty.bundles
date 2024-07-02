@@ -17,7 +17,7 @@
     <properties>
         <poi-ooxml.version>5.2.5</poi-ooxml.version>
 
-        <original.bundle.version>${poi-ooxml.version}</original.bundle.version>
+        <Original-Bundle-Version>${poi-ooxml.version}</Original-Bundle-Version>
         <Export-Package-Root>org.apache.poi</Export-Package-Root>
     </properties>
 
