@@ -9,13 +9,15 @@
         <relativePath>..</relativePath>
     </parent>
 
+    <name>Custom Apache POI OSGi bundle</name>
     <artifactId>org.apache.poi</artifactId>
-    <version>${poi-ooxml.version}</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
         <poi-ooxml.version>5.2.5</poi-ooxml.version>
 
+        <original.bundle.version>${poi-ooxml.version}</original.bundle.version>
         <Export-Package-Root>org.apache.poi</Export-Package-Root>
     </properties>
 
@@ -36,6 +38,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
