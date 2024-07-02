@@ -5,8 +5,8 @@
     <parent>
         <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
         <artifactId>bundles</artifactId>
-        <version>1.1.0</version>
-        <relativePath>..</relativePath>
+        <version>1.1.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>Custom Apache POI OSGi bundle</name>
@@ -29,9 +29,9 @@
         </dependency>
 
         <dependency>
-            <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
+            <groupId>online.grigoriev.tools</groupId>
             <artifactId>export-package-generator</artifactId>
-            <version>${project.parent.version}</version>
+            <version>1.0.0</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
