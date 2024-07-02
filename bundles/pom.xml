@@ -76,13 +76,16 @@
         <maven-jar-plugin.Bundle-SymbolicName>${project.groupId}.${project.artifactId};singleton:=true</maven-jar-plugin.Bundle-SymbolicName>
         <maven-jar-plugin.Bundle-Vendor>SBB AG</maven-jar-plugin.Bundle-Vendor>
         <!--suppress UnresolvedMavenProperty -->
-        <maven-jar-plugin.Bundle-Version>
-            ${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}
-        </maven-jar-plugin.Bundle-Version>
-
+        <maven-jar-plugin.Bundle-Version>${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}</maven-jar-plugin.Bundle-Version>
+        <!--suppress UnresolvedMavenProperty -->
+        <maven-jar-plugin.Original-Bundle-Version>${Original-Bundle-Version}</maven-jar-plugin.Original-Bundle-Version>
         <!--suppress UnresolvedMavenProperty -->
         <maven-exec-plugin.Export-Package>${Export-Package-Root}</maven-exec-plugin.Export-Package>
 
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+        <maven-javadoc-plugin.version>3.7.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
     </properties>
 
@@ -178,8 +181,31 @@
     </profiles>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+        </plugins>
+
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>**/*.java</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -228,6 +254,7 @@
                                 <Automatic-Module-Name>${maven-jar-plugin.Automatic-Module-Name}</Automatic-Module-Name>
                                 <Bundle-SymbolicName>${maven-jar-plugin.Bundle-SymbolicName}</Bundle-SymbolicName>
                                 <Bundle-Version>${maven-jar-plugin.Bundle-Version}</Bundle-Version>
+                                <Original-Bundle-Version>${maven-jar-plugin.Original-Bundle-Version}</Original-Bundle-Version>
                                 <Bundle-Build-Timestamp>${maven-jar-plugin.Bundle-Build-Timestamp}</Bundle-Build-Timestamp>
                                 <Bundle-ClassPath>${maven-jar-plugin.Bundle-ClassPath}</Bundle-ClassPath>
                             </manifestEntries>
@@ -275,6 +302,52 @@
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <sourcepath>${basedir}/src/main/java</sourcepath>
                     </configuration>
                 </plugin>
             </plugins>
