@@ -44,7 +44,7 @@ To use Apache POI as an extension bundle the following changes are required:
 <dependency>
     <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
     <artifactId>org.apache.poi</artifactId>
-    <version>5.2.4</version>
+    <version>1.3.0</version>
     <scope>provided</scope>
 </dependency>
 ```
