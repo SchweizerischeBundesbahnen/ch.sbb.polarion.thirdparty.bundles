@@ -91,7 +91,7 @@
         <!--suppress UnresolvedMavenProperty -->
         <maven-exec-plugin.Export-Package>${Export-Package-Root}</maven-exec-plugin.Export-Package>
 
-        <export-package-generator.version>1.0.0</export-package-generator.version>
+        <export-package-generator.version>1.0.1-SNAPSHOT</export-package-generator.version>
     </properties>
 
     <profiles>
