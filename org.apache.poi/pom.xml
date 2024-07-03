@@ -5,8 +5,7 @@
     <parent>
         <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
         <artifactId>bundles</artifactId>
-        <version>1.1.0</version>
-        <relativePath>..</relativePath>
+        <version>1.1.1-SNAPSHOT</version>
     </parent>
 
     <name>Custom Apache POI OSGi bundle</name>
@@ -26,13 +25,6 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi-ooxml.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
-            <artifactId>export-package-generator</artifactId>
-            <version>${project.parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -56,6 +48,16 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
