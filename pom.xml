@@ -4,7 +4,7 @@
 
     <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
     <artifactId>bundles</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Custom third-party dependencies</name>
