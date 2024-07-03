@@ -5,13 +5,11 @@
     <parent>
         <groupId>ch.sbb.polarion.thirdparty.bundles</groupId>
         <artifactId>bundles</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.2.0</version>
     </parent>
 
     <name>Custom Apache POI OSGi bundle</name>
     <artifactId>org.apache.poi</artifactId>
-    <version>1.2.0</version>
-    <packaging>jar</packaging>
 
     <properties>
         <poi-ooxml.version>5.2.5</poi-ooxml.version>
