@@ -49,4 +49,3 @@ To use Apache POI as an extension bundle the following changes are required:
 </dependency>
 ```
 2. `MANIFEST.MF` should contain `Require-Bundle` entry `ch.sbb.polarion.thirdparty.bundles.org.apache.poi`
-
