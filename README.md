@@ -18,6 +18,16 @@ We have faced the such problem when tried to use Apache POI v5.2.4. This version
 As a result it leads to ClassNotFoundExceptions in some cases when Apache POI functionality is called.
 This project demonstrates how to solve this problem using the packaging of Apache POI dependency as a separate bundle.
 
+## Quick start
+
+The latest version of the extension jars can be downloaded from the [releases page](../../releases/latest) and installed to Polarion instance without necessity to be compiled from the sources.
+The extension jars should be copied to `<polarion_home>/polarion/extensions/ch.sbb.polarion.thirdparty.bundles.<BUNDLE_FOLDER>/eclipse/plugins` folder(s).
+For example jar file `org.apache.poi-1.3.0.jar` should be copied to `<polarion_home>/polarion/extensions/ch.sbb.polarion.thirdparty.bundles.org.apache.poi/eclipse/plugins` folder.
+Changes will take effect after Polarion restart.
+
+> [!IMPORTANT]
+> Don't forget to clear `<polarion_home>/data/workspace/.config` folder after extension installation/update to make it work properly.
+
 ## Build
 
 All the extension artifacts can be produced using maven:
