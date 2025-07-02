@@ -82,7 +82,6 @@ jobs:
           name: maven-artifacts
           path: |
             bundles/target/*.jar
-            bundles/target/*.pom
           retention-days: 1
           if-no-files-found: error
   deploy-maven-central:
