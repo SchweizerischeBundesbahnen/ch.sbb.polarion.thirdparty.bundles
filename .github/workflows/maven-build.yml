@@ -163,4 +163,4 @@ jobs:
       - name: 📦 Upload assets to GitHub Release
         if: ${{ needs.build.outputs.is_release == 'true' }}
         run: |-
-          gh release upload "v${PROJECT_VERSION}" "target/*-${PROJECT_VERSION}.jar" --clobber
+          gh release upload "v${PROJECT_VERSION}" "bundles/**/target/*-${PROJECT_VERSION}.jar" --clobber
