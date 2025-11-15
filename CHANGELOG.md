@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.1](https://github.com/SchweizerischeBundesbahnen/ch.sbb.polarion.thirdparty.bundles/compare/v1.3.0...v1.3.1) (2025-11-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.poi:poi-ooxml to v5.4.0 ([426644d](https://github.com/SchweizerischeBundesbahnen/ch.sbb.polarion.thirdparty.bundles/commit/426644dc2c8d6dc3662fcbeaee04caf9cffb35d8))
+* **deps:** update dependency org.apache.poi:poi-ooxml to v5.4.1 ([933ff00](https://github.com/SchweizerischeBundesbahnen/ch.sbb.polarion.thirdparty.bundles/commit/933ff00f6072f851b8e54653da64632e84abdb61))
+* **deps:** update dependency org.apache.poi:poi-ooxml to v5.5.0 ([2979e44](https://github.com/SchweizerischeBundesbahnen/ch.sbb.polarion.thirdparty.bundles/commit/2979e44ccee2b8bef79a356f7079aa7bb0575893))
+
 ## [1.3.0](https://github.com/SchweizerischeBundesbahnen/ch.sbb.polarion.thirdparty.bundles/compare/v1.2.0...v1.3.0) (2024-07-03)
 
 
