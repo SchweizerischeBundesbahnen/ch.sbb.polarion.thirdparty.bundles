@@ -13,7 +13,7 @@
     <artifactId>org.apache.poi</artifactId>
 
     <properties>
-        <poi-ooxml.version>5.5.0</poi-ooxml.version>
+        <poi-ooxml.version>5.5.1</poi-ooxml.version>
 
         <Original-Bundle-Version>${poi-ooxml.version}</Original-Bundle-Version>
         <Export-Package-Root>org.apache.poi</Export-Package-Root>
